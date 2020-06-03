@@ -38,6 +38,7 @@
 }
 
 .my-custom-scrollbar {
+  border-radius: 4px;
   position: relative;
   height: 400px;
   overflow: auto;

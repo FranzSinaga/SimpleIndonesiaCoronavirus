@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import KasusIndonesia from '../components/stateless/KasusIndonesia';
 import API from '../services/api';
 import ByProv from '../components/stateless/statefull/ByProv';
+import Footer from '../components/stateless/Footer';
 class Home extends Component {
     state = {
         sembuh: 0,
@@ -61,8 +62,9 @@ class Home extends Component {
                                 jumlah={this.state.perawatan}/>
                         </div>
                     </div>
-
+                
                     <ByProv/>
+                    <Footer/>
                 </div>
             </div>
         )
