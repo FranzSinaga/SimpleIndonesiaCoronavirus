@@ -20,7 +20,7 @@
   flex-direction: column;
   /* align-items: center;
   justify-content: center; */
-  font-size: calc(10px + 2vmin);
+  /* font-size: calc(10px + 2vmin); */
   color: white;
 }
 
@@ -35,4 +35,36 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.my-custom-scrollbar {
+  position: relative;
+  height: 400px;
+  overflow: auto;
+}
+
+.table-wrapper-scroll-y {
+  display: block;
+}
+
+.my-custom-scrollbar thead tr th { position: sticky; top: 0; background-color: teal;}
+
+/* width */
+::-webkit-scrollbar  {
+  width: 1px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
 }

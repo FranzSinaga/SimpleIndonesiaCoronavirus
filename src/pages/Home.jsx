@@ -1,8 +1,8 @@
 /* eslint-disable no-unused-expressions */
 import React, { Component } from 'react';
-import axios from 'axios';
 import KasusIndonesia from '../components/stateless/KasusIndonesia';
-import indonesia from '../assets/Indo.jpg';
+import API from '../services/api';
+import ByProv from '../components/stateless/statefull/ByProv';
 class Home extends Component {
     state = {
         sembuh: 0,
@@ -12,19 +12,14 @@ class Home extends Component {
     }
 
     getSembuh(){
-        axios.get('https://indonesia-covid-19.mathdro.id/api')
-            .then((res) => {
-                console.log(res)
-                this.setState({
-                    sembuh: res.data.sembuh,
-                    meninggal: res.data.meninggal,
-                    jumlahKasus: res.data.jumlahKasus,
-                    perawatan: res.data.perawatan
-                })
-            }).catch((err) => {
-                console.log(err);
-                
+        API.getCases().then(res=>{
+            this.setState({
+                sembuh: res.sembuh,
+                meninggal: res.meninggal,
+                jumlahKasus: res.jumlahKasus,
+                perawatan: res.perawatan
             })
+        })
     }
 
     componentDidMount(){
@@ -67,7 +62,7 @@ class Home extends Component {
                         </div>
                     </div>
 
-                    {/* <ByProv/> */}
+                    <ByProv/>
                 </div>
             </div>
         )

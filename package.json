@@ -9,6 +9,7 @@
     "axios": "^0.19.2",
     "bootstrap": "^4.5.0",
     "react": "^16.13.1",
+    "react-data-table-component": "^6.9.3",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1"
   },
