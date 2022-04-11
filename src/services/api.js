@@ -1,7 +1,7 @@
 import Get from './Get'
 
-const getCases = () => Get('');
-const getCasesByProv = () => Get('provinsi');
+const getCases = () => Get('indonesia');
+const getCasesByProv = () => Get('indonesia/provinsi');
 
 const API = {
     getCases,
