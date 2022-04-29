@@ -32,9 +32,18 @@ class ByProv extends Component {
                 dataByProv: this.state.filterProv
             })
         } else {
+            const PROVINSI_VALUE = provinsi.target.value.toUpperCase();
             let dataByProv = [...this.state.filterProv]
             dataByProv = []
-            this.state.dataByProv.filter(cond => cond.provinsi.includes(provinsi.target.value.toUpperCase())).map((data) => {
+            const filterByInput = this.state.dataByProv.filter(cond => {
+                return cond.provinsi.includes(PROVINSI_VALUE)
+            })
+            if (filterByInput.length === 0) {
+                this.setState({
+                    dataByProv: []
+                })
+            }
+            filterByInput.map((data) => {
                 dataByProv.push(data)
                 this.setState({
                     dataByProv,
@@ -45,6 +54,10 @@ class ByProv extends Component {
 
     componentDidMount() {
         this.getByProv()
+    }
+
+    isDataExist() {
+        return this.state.dataByProv.length > 0 ? true : false
     }
 
     render() {
@@ -72,16 +85,21 @@ class ByProv extends Component {
                         </thead>
                         <tbody>
                             {
-                                this.state.dataByProv.map(data => {
-                                    return (
-                                        <tr key={data.provinsi}>
-                                            <td>{data.provinsi}</td>
-                                            <td><span className="badge badge-primary">{Formatter.numberWithCommas(data.dirawat)}</span></td>
-                                            <td><span className="badge badge-danger">{Formatter.numberWithCommas(data.meninggal)}</span></td>
-                                            <td><span className="badge badge-success">{Formatter.numberWithCommas(data.sembuh)}</span></td>
-                                        </tr>
-                                    )
-                                })
+                                this.isDataExist() ?
+                                    this.state.dataByProv.map(data => {
+                                        return (
+                                            <tr key={data.provinsi}>
+                                                <td>{data.provinsi}</td>
+                                                <td><span className="badge badge-primary">{Formatter.numberWithCommas(data.dirawat)}</span></td>
+                                                <td><span className="badge badge-danger">{Formatter.numberWithCommas(data.meninggal)}</span></td>
+                                                <td><span className="badge badge-success">{Formatter.numberWithCommas(data.sembuh)}</span></td>
+                                            </tr>
+                                        )
+                                    })
+                                    :
+                                    <tr>
+                                        <td colSpan={4}><center>😑 Tidak terdapat data yang sesuai</center></td>
+                                    </tr>
                             }
                         </tbody>
                     </table>
