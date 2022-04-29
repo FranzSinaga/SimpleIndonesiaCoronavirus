@@ -1,6 +1,6 @@
 {
-  "name": "dirumah-saja",
-  "version": "0.1.0",
+  "name": "indonesia-coronavirus",
+  "version": "1.0.0",
   "homepage": "https://franzsinaga.github.io/SimpleIndonesiaCoronavirus",
   "private": true,
   "dependencies": {
