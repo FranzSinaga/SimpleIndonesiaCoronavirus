@@ -5,10 +5,14 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import Home from './pages/Home';
 import './App.css';
 
+import ThemeContextWrapper from './ThemeContextWrapper'
+
 ReactDOM.render(
-  <React.StrictMode>
-    <Home />
-  </React.StrictMode>,
+  <ThemeContextWrapper>
+    <React.StrictMode>
+      <Home />
+    </React.StrictMode>{' '}
+  </ThemeContextWrapper>,
   document.getElementById('root')
 );
 

@@ -18,7 +18,7 @@ body{
   }
 }
 
-.App-header {
+body {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -62,15 +62,26 @@ body{
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1; 
+  background: #999999; 
 }
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #008080; 
+  background: #120f0f; 
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+  background: rgb(37, 37, 37); 
+}
+
+.white-content {
+  background: rgb(255, 255, 255);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center;
+  justify-content: center; */
+  /* font-size: calc(10px + 2vmin); */
+  color: black;
 }
