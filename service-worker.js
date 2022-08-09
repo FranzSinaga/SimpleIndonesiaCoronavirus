@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/SimpleIndonesiaCoronavirus/precache-manifest.daebf29356010d1c8ae6c2d90fdfe432.js"
+  "/SimpleIndonesiaCoronavirus/precache-manifest.6f023227c54042f768f1b6faaaf87014.js"
 );
 
 self.addEventListener('message', (event) => {
