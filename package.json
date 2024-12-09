@@ -10,7 +10,7 @@
     "axios": "^0.21.2",
     "bootstrap": "^4.5.0",
     "react": "^16.13.1",
-    "react-data-table-component": "^6.9.3",
+    "react-data-table-component": "^7.6.2",
     "react-dom": "^16.13.1",
     "react-scripts": "5.0.1"
   },
